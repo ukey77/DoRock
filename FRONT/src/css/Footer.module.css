@@ -1,0 +1,100 @@
+.footerArea {
+    color: #EEF2F6;
+    padding: 1.5rem;
+    /* 이미지 있는거 */
+    /* background-image: url("../images/footerImg.jpg");
+    background-color: rgba(202, 202, 202, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten; */
+
+    /* 이미지없는거  */
+    background-color: #e0e0e0;
+    /* text-shadow: 0.2rem 0.2rem #333; */
+    /* text-shadow: 0 0 .5rem #333; */
+    /* text-shadow: 
+    0.2rem 0.2rem 0 black,  
+    -0.2rem -0.2rem 0 black, 
+    0.2rem -0.2rem 0 black,
+    -0.2rem 0.2rem 0 black;  */
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.footerSection {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footerSection article {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+/* .footerSection h4 {
+    font-size: 3rem;
+} */
+.footerSection p {
+    margin: .3rem;
+}
+.footerSection .footerTxt {
+    font-size: 1.35rem;
+    color: #757575;
+}
+.footerTxt > a{
+    display: inline-block;
+    pointer-events: all;
+    color: #535353;
+    cursor: pointer;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #919191;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.footerTxt > a:hover{
+    color: #4875f3;
+    border-bottom: 1px solid #4875f3;
+}
+
+.copyrightTxt{
+    font-size: 1.5rem;
+    color: #535353;
+}
+ .footerSection i {
+    border: 0.5rem solid white;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    margin: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+} 
+
+.footerSection i:hover {
+    cursor: pointer;
+}
+
+.footerLogo{
+    position: absolute;
+    right: 0%;
+    top: 34%;
+    width: 15.5rem;
+    height: 6rem;
+    /* border: 1px solid red; */
+    background: url("../images/footer_logo.png") no-repeat;
+    background-size: contain;
+    background-position: 60% 50%;
+    /* border: 1px solid red; */
+    z-index: 1;
+}

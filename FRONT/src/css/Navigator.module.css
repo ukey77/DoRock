@@ -1,0 +1,128 @@
+.navigator {
+    display: flex;
+    width: 100%;
+    height: 9rem;
+    justify-content: space-between;
+}
+
+.logoArea {
+    width: 18%;
+    height: 95%;
+    text-align: center;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 47%;
+    cursor: pointer;
+    padding-top: 1rem;
+    /* border: 1px solid red; */
+}
+
+.navBar {
+    width: 40%;
+    height: 100%;
+}
+
+.menuElement {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+    text-align: center;
+    line-height: 4rem;
+    margin-top: 2.3rem;
+}
+
+.linkStyle {
+    text-decoration-line: none;
+    -moz-text-decoration-line: none;
+    color: #333333;
+    font-size: 2rem;
+    font-weight: 400;
+    display: inline-block;
+    /* border: 1px solid red; */
+}
+
+.linkStyle:after {
+    display: block;
+    content: '';
+    border-bottom: solid 0.3rem #567FF2;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+}
+
+.linkStyle:hover:after {
+    transform: scaleX(1);
+}
+
+.buttonArea {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+
+/* (11/11)포트폴리오 사이트 명시 */
+.portfolioMessage {
+    width: 100vw;
+    height: 5vh;
+    background: #f3f3f3;
+}
+
+.portfolioText {
+    font-size: 1.6rem;
+    /* text-indent: 1rem; */
+    line-height: 5vh;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.portfolioText>b {
+    font-weight: 700;
+}
+
+.portfolioTeam {
+    display: inline-block;
+    text-indent: 1rem;
+}
+
+/* === 반응형 === */
+@media (max-width: 500px) {
+    .navigator {
+        height: 6rem;
+    }
+
+    .buttonArea {
+        display: none;
+    }
+
+    .logoArea {
+        width: 50%;
+    }
+
+    .menuElement {
+        justify-content: space-evenly;
+    }
+
+    .linkStyle {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .navBar {
+        width: 100%;
+    }
+
+    /* (11/11) 포트폴리오 사이트 명시 */
+    .portfolioText {
+        font-size: 1.1rem;
+    }
+    .portfolioTeam{
+        display: none;
+    }
+}

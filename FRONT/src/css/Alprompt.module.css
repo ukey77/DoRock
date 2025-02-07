@@ -1,0 +1,405 @@
+.alpromptContainer {
+    width: 100vw;
+    height: calc(100vh - 9rem);
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    background-image:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.81), rgba(255, 255, 255, 0.45)),
+        url("../images/footerImg_2.jpg");
+    background-size: cover;
+}
+
+.content {
+    text-align: center;
+    width: 70%;
+    margin-top: 10rem;
+}
+
+.AITitle {
+    font-size: 5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.AIsubText {
+    font-size: 3rem;
+    margin-top: 2rem;
+    color: #444;
+    font-weight: 500;
+}
+
+.tagRecommend::before{
+    content: "#";
+    color: #ff7e42;
+    padding: 0 0.5rem;
+}
+.tagRecommend {
+    display: inline-block;
+    margin: 2em 0 2.5rem;
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #565656;
+    background-color: #FFF2E7;
+    border-left: .4rem solid #FF8F5A;
+    border-right: .4rem solid #FF8F5A;
+    width: 55%;
+    padding: 1.3rem 0;
+    text-indent: 1rem;
+    border-radius: .8rem;
+    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.1rem;
+}
+
+.tags {
+    /* margin: 2rem 0; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.checkbox:checked+.tagBtn {
+    background-color: #ffd1a9;
+    border: 1px solid #ff8f5a;
+    color: #333;
+    box-shadow: 0px 3px 6px rgba(255, 143, 90, 0.3);
+}
+
+.tagBtn::before {
+    content: "#";
+    padding-right: 0.5rem;
+}
+
+.tagBtn {
+    background-color: #fff2e7;
+    border: 1px solid #fdd2b8;
+    color: #ff8f5a;
+    border-radius: 2.5rem;
+    padding: 1.5rem 3rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.searchInput {
+    padding: 1.8rem 7rem 1.8rem 1.5rem;
+    width: 85%;
+    font-size: 2.5rem;
+    border: 2px solid #ffe0c1;
+    border-radius: 3rem;
+    outline: none;
+    text-indent: 1.5rem;
+    background: #fffdfa;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(255, 255, 255, 0.5);
+    transition: all 0.4s ease-in-out;
+    color: #333;
+}
+
+.searchInput:focus {
+    background: #fff8f0;
+    border-color: #ff8f5a;
+    box-shadow: 0px 0px 10px 3px rgba(255, 143, 90, 0.5), inset 0px 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+.searchInput::placeholder {
+    color: #d47c2a;
+    opacity: 0.8;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.micButton {
+    position: relative;
+    right: 6.5rem;
+    background-color: #ff8f5a;
+    border: none;
+    width: 5.5rem;
+    height: 5.5rem;
+    padding-top: .5rem;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 2.75rem;
+    -webkit-border-radius: 2.75rem;
+    -moz-border-radius: 2.75rem;
+    -ms-border-radius: 2.75rem;
+    -o-border-radius: 2.75rem;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.searchBtn {
+    background-color: #ff8f5a;
+    border: none;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 3px 10px rgba(255, 143, 90, 0.3);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+    margin-left: -4rem;
+}
+
+.searchBtn:hover {
+    background-color: #ff7e42;
+}
+
+.searchBtn:active {
+    transform: translateY(.15rem);
+    -webkit-transform: translateY(.15rem);
+    -moz-transform: translateY(.15rem);
+    -ms-transform: translateY(.15rem);
+    -o-transform: translateY(.15rem);
+}
+
+/*2024.11.05_유진*/
+.toast {
+    width: 30rem;
+    height: 5rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: #FF8F5A;
+    color: #721c24;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    animation: fadeInOut 3s forwards;
+    font-size: 2rem;
+    color: white;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    -webkit-animation: fadeInOut 3s forwards;
+    z-index: 100;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+        -webkit-transform: translateY(2rem);
+        -moz-transform: translateY(2rem);
+        -ms-transform: translateY(2rem);
+        -o-transform: translateY(2rem);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(2rem);
+        -webkit-transform: translateY(2rem);
+        -moz-transform: translateY(2rem);
+        -ms-transform: translateY(2rem);
+        -o-transform: translateY(2rem);
+    }
+}
+
+
+/* ===반응형 작업=== */
+@media (max-width: 850px) {
+    .wrap {
+        padding: 1rem;
+        margin-bottom: 5rem;
+    }
+
+    /* 시간 및 날씨 바 */
+    .timeWeatherBar {
+        /* flex-direction: column; */
+        /* align-items: center; */
+        padding: 1rem 2.5rem 0;
+    }
+
+    .weatherTitle,
+    .weather,
+    .timeTitle,
+    .time {
+        font-size: 1.5rem;
+    }
+
+    .weatherBox {
+        background-color: transparent;
+    }
+
+    .timeTitle,
+    .time {
+        font-size: 2rem;
+    }
+
+    .mainContent {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .sourceText {
+        visibility: hidden;
+    }
+
+    /* 슬라이드 영역 */
+    .slideArea {
+        width: 90%;
+        height: 50%;
+    }
+
+    /* 프롬프트 박스 */
+    .promptBox {
+        width: 90%;
+        height: 45%;
+        padding: 1.5rem;
+    }
+
+    .promptTitle {
+        font-size: 1.9rem;
+    }
+
+    /* 입력 필드 스타일 */
+    .aiInput {
+        width: 100%;
+        font-size: 1.8rem;
+        padding: 1rem;
+        margin: 2.8rem 0;
+    }
+
+    /* 버튼 스타일 */
+    .submitBtn {
+        width: 100%;
+        font-size: 1.7rem;
+        height: 4rem;
+    }
+
+    /* 날씨 박스 */
+    .weatherBox {
+        padding: 0.4rem 2rem;
+    }
+
+    .promptBox {
+        height: 40%;
+    }
+
+    .weatherTitle {
+        font-size: 1.5rem;
+    }
+
+    .temperature {
+        font-size: 1.4rem;
+    }
+
+    .weatherIcon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    /* 토스트 메시지 */
+    .toast {
+        width: 25rem;
+        height: 4rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+    }
+    .tagRecommend{
+        width: 90%;
+        font-size: 2rem;
+    }
+}
+
+/*  ===반응형 작업=== */
+
+@media screen and (max-width: 500px) {
+    .alpromptContainer {
+        padding: 0;
+    }
+
+    .content {
+        width: 90%;
+        margin-top: 8rem;
+    }
+
+    .AITitle {
+        font-size: 3rem;
+    }
+
+    .AIsubText {
+        font-size: 2rem;
+    }
+
+    .tags {
+        margin: 1rem 0;
+        gap: 2rem 4rem;
+        display: none;
+    }
+
+    .tagBtn {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+    }
+
+    .searchBar {
+        /* flex-direction: column; */
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .searchInput {
+        width: 80%;
+        padding: 1.5rem 1.5rem 1.5rem 0;
+        font-size: 1.6rem;
+    }
+
+    .searchBtn {
+        width: 5rem;
+        height: 5rem;
+        font-size: 2rem;
+        margin-left: -5.5rem;
+    }
+
+    .micButton {
+        right: 6rem;
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .toast {
+        width: 25rem;
+        height: 4rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.6rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* (11/13추가) */
+    .tagRecommend {
+        display: none;
+    }
+}

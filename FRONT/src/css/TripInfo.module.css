@@ -1,0 +1,199 @@
+.tripInfoWrapper {
+    width: 100vw;
+    height: 100vh;
+    /* height: calc(100vh - 8rem); */
+    /* background: #f9f9f9; */
+    padding: 2rem;
+    box-shadow: inset 0px 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+}
+
+.tripInfoArea {
+    margin: auto;
+    width: 94rem;
+    height: 100%;
+}
+
+.titleArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    padding: 0 1rem;
+}
+
+    .tripInfoTitle {
+        font-size: 4rem;
+        font-weight: 600;
+
+        display: inline-block;
+        width: 85%;
+        border-bottom: 2px solid #00AAFF;
+        margin-bottom: 1rem;
+    }
+
+    .selectButton {
+        width: 12rem;
+        height: 6rem;
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: white;
+        background-color: #00AAFF;
+        border: none;
+        border-radius: 1.5rem;
+        -webkit-border-radius: 1.5rem;
+        -moz-border-radius: 1.5rem;
+        -ms-border-radius: 1.5rem;
+        -o-border-radius: 1.5rem;
+
+        cursor: pointer;
+    }
+    .selectButton:hover {
+        color: white;
+        box-shadow: 0 0 .7rem #00AAFF;
+    }
+
+.touristSpotBoxes {
+    width: 100%;
+    height: 90%;
+
+    overflow: scroll;
+    position: relative;
+}
+
+    .touristSpotBoxes::-webkit-scrollbar {
+        width: 0.7rem;
+    }
+    .touristSpotBoxes::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    .touristSpotBoxes::-webkit-scrollbar-thumb {
+        background-color: #00AAFF;
+        border-radius: .4rem;
+        -webkit-border-radius: .4rem;
+        -moz-border-radius: .4rem;
+        -ms-border-radius: .4rem;
+        -o-border-radius: .4rem;
+    }
+    .touristSpotBoxes::-webkit-scrollbar-button {
+        display: none;
+    }
+
+.touristSpotBox {
+    width: 32%;
+    height: 19rem;
+
+    float: left;
+    border: .1rem solid lightgrey;
+
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    
+    overflow: hidden;
+    margin: 0 0 1rem 1rem;
+
+    cursor: pointer;
+}
+
+    .touristSpotImg {
+        width: 100%;
+        height: 70%;
+
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+
+    .infoArea {
+        height: 30%;
+
+        text-align: center;
+        background-color: #f9f9f9;
+    }
+
+        .touristSpotTitle {
+            width: 100%;
+
+            font-size: 2rem;
+            font-weight: 600;
+            padding-top: .2rem;
+        }
+
+        .touristSpotAddr {
+            font-size: 1.5rem;
+            color: #67676e;
+        }
+        .goTopButton {
+            width: 8rem;
+            height: 4rem;
+
+            position: fixed;
+            top: calc( 100% - 5rem );
+            left: calc( 100% - 9rem );
+
+            background-color: #00AAFF;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+
+            border: none;
+            border-radius: 1rem;
+
+            -webkit-border-radius: 1rem;
+            -moz-border-radius: 1rem;
+            -ms-border-radius: 1rem;
+            -o-border-radius: 1rem;
+
+            visibility: hidden;
+            z-index: 1000;
+}
+
+@media (max-width: 500px) {
+    .tripInfoWrapper {
+        padding-top: 0;
+    }
+    .tripInfoTitle {
+        font-size: 2.5rem;
+        font-weight: 400;
+
+        margin:0 1rem;
+
+        text-wrap: nowrap;
+        overflow: scroll;
+    }
+    .selectButton{
+        font-size: 2rem;
+        height: 5rem;
+    }
+    .tripInfoWrapper {
+        width: 100%;
+    }
+    .tripInfoArea {
+        width: 100%;
+        height: 100%;
+    }
+
+    .touristSpotBoxes {
+        width: 100%;
+        height: 90%;
+    
+        overflow: scroll;
+    }
+    .touristSpotBoxes::-webkit-scrollbar {
+        display: none;
+    }
+
+    .touristSpotBox {
+        width: 95%;
+        height: 20rem;
+        float: none;
+    }
+
+    .goTopButton {
+        visibility: visible;
+    }
+}

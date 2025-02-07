@@ -1,0 +1,20 @@
+.youtubeArea{
+    width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+}
+iframe{
+    width: 100%;
+    border-radius:1rem ;
+    margin: 1rem 0;
+}
+
+@media (max-width: 600px) {
+    .youtubeArea{
+        width: 100%;
+    }
+
+    iframe{
+        width: 95%;
+    }
+}

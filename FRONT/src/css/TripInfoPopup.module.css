@@ -1,0 +1,167 @@
+/* <div className={ popupStyles.popupContainer }>
+<main className={popupStyles.popupMain}>
+    <section classname={popupStyles.buttonSection}>
+        <button>지역초기화</button>
+        <button>검색</button>
+    </section>
+    <section className={popupStyles.checkBoxSection}>
+        <label> <input key="all" type="checkbox"/>강원도 전체 </label>
+        {inputs}
+    </section>
+</main>
+<h1>test</h1>
+</div> */
+
+
+/* .popupContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+.popupBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 50;
+
+    touch-action: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+    body:has(.popupBackground) { /* 팝업이 열려 있으면 스크롤을 막는 코드 */
+        overflow: hidden;
+    }
+
+.popupMain {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    height: 40rem;
+    /* background-color: #f0f0f0; */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius:1rem;
+    box-shadow: 0 0.4rem 1.5rem rgba(0,0,0,0.2);
+    padding:2rem;
+
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius:1rem;
+    -moz-border-radius:1rem;
+    -ms-border-radius:1rem;
+    -o-border-radius:1rem;
+}
+
+.buttonSection {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.buttonSection button{
+    padding: 0.5rem 1.5rem;
+    font-size:2.2rem;
+    color:white;
+    background-color: #00AAFF;
+    border: none;
+    border-radius:0.9rem;
+    cursor:pointer;
+    -webkit-border-radius:0.9rem;
+    -moz-border-radius:0.9rem;
+    -ms-border-radius:0.9rem;
+    -o-border-radius:0.9rem;
+}
+.buttonSection button:hover{
+    background-color: #357abd;
+}
+
+/* .checkBoxSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+} */
+
+.checkBoxSection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    column-gap: 2rem;
+    padding: 1rem;
+}
+
+.checkBoxSection label:first-child{
+    font-weight:700
+}
+
+.checkBoxSection label{
+    font-size:2rem;
+    color:#333;
+    padding:0.7rem;
+    background-color: #ffffff;
+    border: 0.1rem solid #53c6ff;
+    border-radius: 0.8rem;
+    cursor:pointer;
+    text-align: center;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    -ms-border-radius: 0.8rem;
+    -o-border-radius: 0.8rem;
+}
+
+.checkBoxSection input[type="checkbox"]:checked + label{
+    background-color:  #53c6ff;
+    color:white
+}
+
+.checkBoxSection label:hover{
+    background-color: rgba(80, 163, 245, 0.6);
+}
+
+.checkBoxSection input[type="checkbox"]
+{
+    display:none;
+}
+
+
+/* exception */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+    -webkit-animation: shake 0.3s ease-in-out;
+}
+
+.warning-message {
+    position:absolute;
+    color: red;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    display: none; /* 기본은 숨김 */
+    bottom:0.5rem;
+}
+
+.warning-message.visible {
+    display: block;
+}

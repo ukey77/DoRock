@@ -1,0 +1,609 @@
+/* 전체 레이아웃 스타일 */
+.wrap {
+    position: relative;
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    color: #333;
+    background: #edf7ed;
+    margin-bottom: 10rem;
+}
+
+/* 시간 및 날씨 바 */
+.timeWeatherBar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 3rem;
+}
+
+.weather,
+.timeTitle,
+.time {
+    font-size: 2.1rem;
+    border-radius: 1rem;
+}
+
+.weatherTitle {
+    width: 13rem;
+    padding-bottom: .5rem;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+/* 11/12 강원도 날씨 팝업 open icon 추가 */
+.weatherTitle>i {
+    display: inline-block;
+    font-weight: 800;
+    font-style: 2rem;
+    pointer-events: none;
+}
+
+.weatherTitle:hover,
+.weatherTitle>i:hover {
+    cursor: pointer;
+}
+
+/* .weatherTitle:hover{
+    border-bottom: 2px solid #ddd;
+} */
+
+.timeTitle,
+.time {
+    font-size: 2.7rem;
+    font-weight: 550;
+}
+
+/* 메인 콘텐츠 영역 */
+.mainContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: -3.5rem;
+}
+
+/* 슬라이드 영역 */
+.slideArea {
+    width: 48%;
+    height: 80%;
+}
+
+.slideimgWrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* .slideimgWrap img {
+    position: absolute;
+    border-radius: 1rem;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 3s ease-in-out;
+    -webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -ms-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out;
+} */
+
+/* 이미지 기본 스타일 */
+.slideImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+}
+
+/* 페이드 인 효과 */
+.fadeIn {
+    opacity: 1;
+}
+
+/* 페이드 아웃 효과 */
+.fadeOut {
+    opacity: 0.35;
+}
+
+/* 숨겨진 이미지 */
+.hidden {
+    display: none;
+}
+
+
+.slideBox img.active {
+    opacity: 1;
+}
+
+/* 프롬프트 박스 */
+.promptBox {
+    width: 45%;
+    height: 50%;
+    background: linear-gradient(145deg, #ffffff, #f2f9f3);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1), -8px -8px 20px rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promptBox:hover {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 20px rgba(255, 255, 255, 0.6);
+}
+
+.promptTitle {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 입력 필드 스타일 */
+.input_mic {
+    width: 100%;
+}
+
+.aiInput {
+    width: 90%;
+    padding: 1.35rem;
+    border-radius: 1.5rem;
+    border: 1px solid #00aaff;
+    font-size: 2rem;
+    background: #ffffff;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    color: #333;
+    margin: 4.5rem 0;
+
+    margin-right: -4rem;
+}
+
+.aiInput:focus {
+    border-color: #0077cc;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.aiInput::placeholder {
+    font-size: 1.8rem;
+}
+
+.micButton {
+    position: relative;
+
+    top: .45rem;
+    left: -.7rem;
+
+    background-color: #00aaff;
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    padding-top: .5rem;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 2.75rem;
+    -webkit-border-radius: 2.75rem;
+    -moz-border-radius: 2.75rem;
+    -ms-border-radius: 2.75rem;
+    -o-border-radius: 2.75rem;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+/* 버튼 스타일 */
+.submitBtn {
+    width: 17rem;
+    /*height: 4.5rem;
+    */
+    height: 15%;
+    background: linear-gradient(145deg, #00aaff, #0077cc);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.9rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.6);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    -webkit-transition: background 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: background 0.3s ease, box-shadow 0.3s ease;
+    -ms-transition: background 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.submitBtn:hover {
+    background: linear-gradient(145deg, #0077cc, #005f99);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -6px -6px 12px rgba(255, 255, 255, 0.5);
+}
+
+/* 좌우 화살표 버튼 스타일 */
+.prevButton,
+.nextButton,
+.stopButton {
+    padding: 1rem;
+    color: #333;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.prevButton:hover,
+.nextButton:hover,
+.stopButton:hover {
+    font-weight: bold;
+    box-shadow: 0 .3rem .7rem rgba(0, 0, 0, 0.2);
+}
+
+/* =====날씨 ===== */
+.weatherBox {
+    /* background-color: #c7d6c759; */
+    padding: .6rem 3.5rem 0rem;
+}
+
+.weatherBox>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin-left: -2.5rem;
+}
+
+.weatherTitle {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    letter-spacing: 0.15rem;
+    margin-bottom: 0.6rem;
+    /* border: 1px solid red; */
+    /* background: gold; */
+}
+
+.temperature {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.weatherIcon {
+    width: 5.5rem;
+    height: 5.5rem;
+    display: inline-block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*2024.11.04 동현 추가*/
+.toast {
+    width: 30rem;
+    height: 5rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-color: #0077cc;
+    color: #721c24;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    animation: fadeInOut 3s forwards;
+    font-size: 2rem;
+    color: white;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    -webkit-animation: fadeInOut 3s forwards;
+    z-index: 100;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+        -webkit-transform: translateY(2rem);
+        -moz-transform: translateY(2rem);
+        -ms-transform: translateY(2rem);
+        -o-transform: translateY(2rem);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(2rem);
+        -webkit-transform: translateY(2rem);
+        -moz-transform: translateY(2rem);
+        -ms-transform: translateY(2rem);
+        -o-transform: translateY(2rem);
+    }
+}
+
+/* ===반응형 작업=== */
+@media (max-width: 850px) {
+    .wrap {
+        padding: 1rem;
+        margin-bottom: 5rem;
+    }
+
+    /* 시간 및 날씨 바 */
+    .timeWeatherBar {
+        /* flex-direction: column; */
+        /* align-items: center; */
+        padding: 1rem 0 0 2.5rem;
+    }
+
+    .weatherTitle,
+    .weather,
+    .timeTitle,
+    .time {
+        font-size: 1.5rem;
+    }
+
+    .timeTitle,
+    .time {
+        font-size: 2rem;
+    }
+
+    .mainContent {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .sourceText {
+        display: none;
+    }
+
+    /* 슬라이드 영역 */
+    .slideArea {
+        width: 90%;
+        height: 50%;
+    }
+
+    /* 프롬프트 박스 */
+    .promptBox {
+        width: 90%;
+        height: 45%;
+        padding: 1.5rem;
+    }
+
+    .promptTitle {
+        font-size: 1.9rem;
+    }
+
+    .input_mic {
+        width: 100%;
+        display: block;
+    }
+    /* 입력 필드 스타일 */
+    .aiInput {
+        width: 100%;
+        font-size: 1.8rem;
+        padding: 1rem;
+    }
+
+    .micButton {
+        width: 3.5rem;
+        height: 3.5rem;
+        top: .5rem;
+        left: .1rem;
+    }
+
+    /* 버튼 스타일 */
+    .submitBtn {
+        width: 100%;
+        font-size: 1.7rem;
+        height: 4rem;
+    }
+
+
+
+    /* 날씨 박스 */
+    .weatherBox {
+        padding: 0.4rem 0rem;
+    }
+
+    .promptBox {
+        height: 40%;
+    }
+
+    .weatherTitle {
+        font-size: 1.5rem;
+    }
+
+    .temperature {
+        font-size: 1.4rem;
+    }
+
+    .weatherIcon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    /* 토스트 메시지 */
+    .toast {
+        width: 25rem;
+        height: 4rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    /* ===날씨영역 추가 임시=== (11/12) */
+    .forecastContainer {
+        opacity: 0;
+    }
+
+    .weatherTitle {
+        margin: -0.5rem 0;
+    }
+
+    .weatherTitle>i {
+        visibility: hidden;
+    }
+
+}
+
+/* ===날씨영역 추가=== (11/12) */
+.forecastContainer {
+    position: absolute;
+    right: -22.5rem;
+    top: 156%;
+    transform: translate(-50%, -50%);
+    width: 55rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 100;
+    border-radius: 1rem;
+    box-shadow: .2rem .5rem 2rem #48484860;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+/* ==Current Area== */
+.currentWeather {
+    background-color: #455a64;
+    color: #ffffff;
+    padding: 2.5rem 2rem;
+    width: 35%;
+    text-align: center;
+    border-radius: 1rem 0 0 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.todayIcon {
+    margin-top: -1rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.todayCondition {
+    font-size: 1.3rem;
+    color: #eceff1;
+    font-weight: 500;
+}
+
+.todayTime {
+    font-size: 1.9rem;
+    color: #b0bec5;
+    font-weight: 400;
+    margin: 0.7rem 0 0.3rem;
+}
+
+.todayTemperatureLarge {
+    font-size: 3.3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.location {
+    font-size: 1.1rem;
+    color: #b0bec5;
+    margin-top: 1rem;
+    font-weight: 350;
+}
+
+/* ==forecast list== */
+.forecast {
+    background-color: #ebeced;
+    color: #333;
+    width: 65%;
+    padding: 0 1.5rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.forecastItem {
+    display: flex;
+    height: 25%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #b0bec5;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.forecastItem:last-child {
+    border-bottom: none;
+}
+
+.forecastDate,
+.forecastCondition,
+.forecastIcon,
+.forecastTemperature {
+    display: inline-block;
+    font-size: 1.18rem;
+    width: 25%;
+    color: #455a64;
+}
+
+.forecastDate {
+    font-weight: bold;
+    color: #37474f;
+}
+
+.forecastCondition {
+    color: #546e7a;
+    padding: 0 1rem;
+}
+
+.forecastIcon {
+    padding: 1rem;
+}
+
+.forecastTemperature {
+    color: #37474f;
+}
